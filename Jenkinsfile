@@ -6,10 +6,14 @@ pipeline {
     stage('Build') {
       steps {
         script {
-            sh "ps -ef | grep demo-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{ print $2 }' | kill -9 "
-            sh "chmod u+x ./gradlew"
-            sh "./gradlew clean"
-            sh "./gradlew build -x test"
+          sh '''
+            PID=ps -ef | grep demo-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{ print $2 }'
+            echo $PID
+            kill -9 $PID
+            chmod u+x ./gradlew
+            ./gradlew clean
+            ./gradlew build -x test
+            '''
         }
       }
     }
