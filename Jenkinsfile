@@ -23,7 +23,8 @@ pipeline {
     stage('Deploy') {
       steps {
         script {
-            sh "java -jar build/libs/demo-0.0.1-SNAPSHOT.jar &"
+            sh "chmod u+x ./gradlew"
+            sh "./gradlew bootrun &"
         }
       }
     }
