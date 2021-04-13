@@ -6,6 +6,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
+            sh "chmod u+x ./stop.sh"
+            sh "./stop.sh"
             sh "chmod u+x ./gradlew"
             sh "./gradlew clean"
             sh "./gradlew build -x test"
@@ -23,8 +25,7 @@ pipeline {
     stage('Deploy') {
       steps {
         script {
-            sh "chmod u+x ./gradlew"
-            sh "./gradlew bootrun"
+            sh "java -jar build/libs/demo-0.0.1-SNAPSHOT.jar &"
         }
       }
     }
