@@ -5,5 +5,5 @@ then
     echo Application is already stopped
 else
     echo kill $PID
-    kill $PID
+    sudo kill $PID
 fi
