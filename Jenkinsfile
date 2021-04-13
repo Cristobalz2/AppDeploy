@@ -24,7 +24,7 @@ pipeline {
       steps {
         script {
             sh "chmod u+x ./gradlew"
-            sh "./gradlew bootrun &"
+            sh "./gradlew bootrun "
         }
       }
     }
