@@ -7,9 +7,7 @@ pipeline {
       steps {
         script {
           sh '''
-            PID=ps -ef | grep demo-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{ print $2 }'
-            echo $PID
-            kill -9 $PID
+            kill -9 7887
             chmod u+x ./gradlew
             ./gradlew clean
             ./gradlew build -x test
