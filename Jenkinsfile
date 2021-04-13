@@ -6,12 +6,9 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          sh '''
-            kill -9 7887
-            chmod u+x ./gradlew
-            ./gradlew clean
-            ./gradlew build -x test
-            '''
+              sh "chmod u+x ./gradlew"
+              sh "./gradlew clean"
+              sh "./gradlew build -x test"
         }
       }
     }
