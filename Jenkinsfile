@@ -6,6 +6,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
+            sh "sudo su"
             sh "chmod 777 ./stop.sh"
             sh "sudo ./stop.sh"
             sh "chmod u+x ./gradlew"
