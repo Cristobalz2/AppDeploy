@@ -6,8 +6,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-            sh "chmod 777 ./stop.sh"
-            sh "./stop.sh"
+            sh "PID=$(ps -ef | grep yourapp.jar | grep -v grep | awk '{ print $2 }')"
+            sh "kill $PID"
             sh "chmod u+x ./gradlew"
             sh "./gradlew clean"
             sh "./gradlew build -x test"
