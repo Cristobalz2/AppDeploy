@@ -6,8 +6,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-            sh "chmod u+x ./stop.sh"
-            sh "./stop.sh"
+            sh "chmod 777 ./stop.sh"
+            sh "sudo ./stop.sh"
             sh "chmod u+x ./gradlew"
             sh "./gradlew clean"
             sh "./gradlew build -x test"
