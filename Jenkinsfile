@@ -6,8 +6,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-              sh "docker stop gradle 2>/dev/null"
-              sh "docker rm gradle 2>/dev/null"
+              sh "docker stop gradle"
+              sh "docker rm gradle"
               sh "chmod u+x ./gradlew"
               sh "./gradlew clean"
               sh "./gradlew build -x test"
