@@ -18,7 +18,7 @@ class PruebaApplicationTests {
 	void contextLoads() {
 		String name = "pepito";
 		String response = holaMundoController.Hola(name);
-		assertEquals("Hola pepito", response);
+		assertEquals("Hola2 pepito", response);
 	}
 
 }
