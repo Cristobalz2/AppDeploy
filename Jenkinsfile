@@ -7,7 +7,7 @@ pipeline {
       steps {
         script {
               sh "docker stop gradle || true"
-              sh "docker rm gradl || true"
+              sh "docker rm gradle || true"
               sh "chmod u+x ./gradlew"
               sh "./gradlew clean"
               sh "./gradlew build -x test"
