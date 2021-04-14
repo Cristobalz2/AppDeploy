@@ -10,7 +10,7 @@ public class HolaMundoController {
 
 	@GetMapping
 	public String Hola(String name) {
-		return "Hola " + name;
+		return "Hola probando actualizacion " + name;
 	}
 	
 }
